@@ -13,22 +13,21 @@
     }
 
     html, body {
-      height: 100%;
+      min-height: 100%;
     }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #1f4fff 0%, #050816 55%, #02040a 100%);
       color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding: 16px;
+      min-height: 100vh; /* тянем фон и тело хотя бы на высоту экрана */
     }
 
     .page {
       width: 100%;
       max-width: 720px;
+      margin: 24px auto 24px; /* отступ сверху/снизу, чтобы ничего не упиралось */
     }
 
     .card {
@@ -287,4 +286,3 @@
   </div>
 </body>
 </html>
-
