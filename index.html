@@ -1,1 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>joinozonqr - поиск сотрудников</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Поиск сотрудников в пункт выдачи заказов. Работа с клиентами и посылками. Гибкий график, стабильные выплаты.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f4fff 0%, #050816 55%, #02040a 100%);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .card {
+      backdrop-filter: blur(18px);
+      background: rgba(5, 10, 30, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      padding: 24px 20px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (min-width: 640px) {
+      .card {
+        padding: 32px 32px 28px;
+      }
+    }
+
+    .logo-wrap {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(120deg, #00aaff, #ff2e9f);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .text + .text {
+      margin-top: 4px;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .list li {
+      font-size: 14px;
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      top: 0;
+      color: #27c4ff;
+    }
+
+    .contact-block {
+      margin-top: 4px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(120deg, #27c4ff, #ff2e9f);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn span.icon {
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+      filter: brightness(0.96);
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 11px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer span {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 400px) {
+      .logo {
+        font-size: 32px;
+      }
+      .title {
+        font-size: 18px;
+      }
+      .intro {
+        font-size: 14px;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="card">
+      <header class="logo-wrap">
+        <div class="logo">OZON</div>
+        <div class="subtitle">joinozonqr · qrtx</div>
+      </header>
+
+      <h1 class="title">Ищем сотрудников в пункт выдачи заказов</h1>
+
+      <p class="intro">
+        Нужны спокойные, аккуратные люди, которые готовы работать с клиентами и посылками:
+        принять заказы, выдать, оформить возвраты, следить за порядком в клиентской зоне.
+        Ничего сложного, всему научим.
+      </p>
+
+      <section class="section">
+        <h2 class="section-title">Адрес работы</h2>
+        <p class="text">
+          Клязьма-Старбеево, Международный квартал,<br>
+          Загородная улица, дом 3
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">График и формат</h2>
+        <p class="text">
+          Смена: с <b>10:00 до 22:00</b> (12 часов)<br>
+          Базовый график: <b>2/2</b>
+        </p>
+        <p class="text">
+          При этом можем обсудить <b>индивидуальный график</b>: меньше часов,
+          больше или меньше смен. Детали обсуждаем на собеседовании.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Оплата труда</h2>
+        <ul class="list">
+          <li>Стажировка: <b>2300 ₽ за смену</b> (первые 2 недели)</li>
+          <li>Далее: <b>2500 ₽ за смену</b></li>
+          <li>При увеличении нагрузки ставку готовы повышать честно и по делу</li>
+          <li>Выплаты <b>2 раза в месяц</b>: 10-го и 25-го числа</li>
+          <li>Есть возможность дополнительных подработок</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Что нужно делать</h2>
+        <ul class="list">
+          <li>Принимать посылки</li>
+          <li>Выдавать заказы клиентам</li>
+          <li>Оформлять возвраты</li>
+          <li>Следить за порядком на точке и в клиентской зоне</li>
+          <li>Работать с простой программой на компьютере или терминале</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Кого ищем</h2>
+        <ul class="list">
+          <li>Пунктуальных и ответственных</li>
+          <li>Аккуратных и внимательных к деталям</li>
+          <li>Вежливых в общении с людьми</li>
+          <li>С базовыми навыками работы с ПК</li>
+        </ul>
+        <p class="text">
+          Остальное обсуждаем индивидуально на собеседовании.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Как откликнуться</h2>
+        <p class="text">
+          Напишите администратору в Telegram:
+        </p>
+        <div class="contact-block">
+          <a class="btn" href="https://t.me/sergeiseveroff" target="_blank" rel="noopener">
+            <span class="icon">💬</span>
+            <span>администратор Сергей</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>проект joinozonqr · qrtx</span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
 
